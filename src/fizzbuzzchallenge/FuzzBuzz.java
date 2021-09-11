@@ -13,11 +13,17 @@ public class FuzzBuzz {
     - Otherwise the program prints the number given by the user.
     */
     public static void main(String[] args) {
+        System.out.println("THE FIZZBUZZ CHALLENGE-----------------");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter an integer between 1 and 100: ");
         int number = scanner.nextInt();
         if (number >= 1 && number <= 100) {
-            System.out.println(number);
+            System.out.println(number + " is a valid entry. Proceed to the challenge.");
+            String decision = (number % 3 == 0 && number % 5 == 0) ? "FizzBuzz"
+                    : (number % 3 == 0) ? "Fizz"
+                    : (number % 5 == 0) ? "Buzz"
+                    : String.valueOf(number);
+            System.out.println("And the program returns: " + decision);
         } else {
             System.out.println("WARNING!!! OUT OF BOUNDS!!!");
         }
