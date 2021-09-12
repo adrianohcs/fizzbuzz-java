@@ -15,22 +15,23 @@ public class FuzzBuzz {
     public static void main(String[] args) {
         System.out.println("THE FIZZBUZZ CHALLENGE-----------------");
         double number;
+        String decision;
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Enter an integer between 1 and 100: ");
             number = Double.parseDouble(scanner.nextLine());
             if (number >= 1 && number <= 100) {
                 System.out.println(number + " is a valid entry. Proceed to the challenge.");
-                String decision = (number % 3 == 0 && number % 5 == 0) ? "FizzBuzz"
-                        : (number % 3 == 0) ? "Fizz"
-                        : (number % 5 == 0) ? "Buzz"
-                        : String.valueOf(number);
-                System.out.println("And the program returns: " + decision);
                 break;
             }
             if (number < 1 || number > 100) {
                 System.out.println("Unfit number! Try again.");
             }
         }
+        decision = (number % 3 == 0 && number % 5 == 0) ? "FizzBuzz"
+                : (number % 3 == 0) ? "Fizz"
+                : (number % 5 == 0) ? "Buzz"
+                : String.valueOf(number);
+        System.out.println("And the program returns: " + decision);
     }
 }
